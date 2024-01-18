@@ -377,3 +377,61 @@ template {
 [hidden] {
     display: none;
 }
+
+/******************** Custom css ************************/
+
+* {
+    font-family: Gotham Rounded, sans-serif;
+    font-weight: normal;
+}
+
+body {
+    background: linear-gradient(to right, blue, green);
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid>button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: gainsboro;
+}
+
+.calculator-grid>button:hover {
+    background-color: white;
+}
+
+.double-btn {
+    grid-column: span 2;
+}
+
+.screen {
+    grid-column: span 4;
+    background-color: rgba(0, 0, 0, 0.596);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.screen .operand-previous {
+    color: gainsboro;
+    font-size: 1.5rem;
+}
+
+.screen .operand-current {
+    color: white;
+    font-size: 2.5rem;
+}
