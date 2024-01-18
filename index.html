@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Calculator</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Sora:wght@200;300&family=Yusei+Magic&display=swap"
+			rel="stylesheet" />
+		<link href="styles.css" rel="stylesheet" />
+		<script src="main.js" defer></script>
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <link href="styles.css" rel="stylesheet">
-    <script src="main.js" defer></script>
-</head>
-
-<body>
-    <div class="calculator-grid">
-        <div class="screen">
-            <div class="operand-previous">1110+</div>
-            <div class="operand-current">485</div>
-        </div>
-        <button class="double-btn">AC</button>
-        <button>DEL</button>
-        <button>÷</button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>*</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>+</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button>-</button>
-        <button>.</button>
-        <button>0</button>
-        <button class="double-btn">=</button>
-    </div>
-</body>
-
+	<body>
+		<div class="calculator-grid">
+			<div class="screen">
+				<div data-previous class="operand-previous">1110+</div>
+				<div data-current class="operand-current">485</div>
+			</div>
+			<button data-all-clear class="double-btn">AC</button>
+			<button data-delete>DEL</button>
+			<button data-operation>÷</button>
+			<button data-number>1</button>
+			<button data-number>2</button>
+			<button data-number>3</button>
+			<button data-operation>*</button>
+			<button data-number>4</button>
+			<button data-number>5</button>
+			<button data-number>6</button>
+			<button data-operation>+</button>
+			<button data-number>7</button>
+			<button data-number>8</button>
+			<button data-number>9</button>
+			<button data-operation>-</button>
+			<button data-number>.</button>
+			<button data-number>0</button>
+			<button data-equal class="double-btn">=</button>
+		</div>
+	</body>
 </html>

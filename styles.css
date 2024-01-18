@@ -381,19 +381,19 @@ template {
 /******************** Custom css ************************/
 
 * {
-    font-family: Gotham Rounded, sans-serif;
-    font-weight: normal;
+    font-family: 'Yusei Magic', sans-serif;
+    font-weight: 600;
 }
 
 body {
-    background: linear-gradient(to right, blue, green);
+    background: linear-gradient(121deg, rgba(2,0,36,1) 0%, rgba(9,121,110,1) 59%, rgba(0,255,235,1) 100%);
+    min-height: 100vh;
 }
 
 .calculator-grid {
+    padding-top: 25%;
     display: grid;
     justify-content: center;
-    align-content: center;
-    min-height: 100vh;
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
@@ -401,13 +401,18 @@ body {
 .calculator-grid>button {
     cursor: pointer;
     font-size: 2rem;
-    border: 1px solid white;
+    border: 1px solid rgba(0, 0, 0, 0.346);;
     outline: none;
     background-color: gainsboro;
 }
 
 .calculator-grid>button:hover {
     background-color: white;
+    transition: 0.05s ease-in;
+    -webkit-transition: 0.05s ease-in;
+    -moz-transition: 0.05s ease-in;
+    -ms-transition: 0.05s ease-in;
+    -o-transition: 0.05s ease-in;
 }
 
 .double-btn {
@@ -416,7 +421,7 @@ body {
 
 .screen {
     grid-column: span 4;
-    background-color: rgba(0, 0, 0, 0.596);
+    background-color: rgba(0, 0, 0, 0.346);
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
@@ -428,10 +433,10 @@ body {
 
 .screen .operand-previous {
     color: gainsboro;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .screen .operand-current {
     color: white;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
