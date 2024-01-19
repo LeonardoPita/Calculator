@@ -9,6 +9,11 @@ let message = false
 
 numbersBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
+        if (currentText.textContent.length > 15) return
+        if (!['-', '+', '*', '÷'].includes(previousText.textContent.slice(-1)) && previousText.textContent) {
+            previousText.textContent = ''
+        }
+
         handleErrorMessage()
         if (e.target.textContent === '.') {
             let arrayCurrent = Array.from(currentText.textContent)
@@ -41,9 +46,10 @@ function deleteOne() {
 }
 
 function operations(btn) {
+    calculate()
+    replaceSymbols(btn)
     handleErrorMessage()
     if (!currentText.textContent) return;
-    checkSymbols(btn)
     currentText.textContent += btn.textContent;
     previousText.textContent = currentText.textContent;
     currentText.textContent = '';
@@ -82,7 +88,7 @@ function calculate() {
                 return;
         }
         currentText.textContent = '';
-        previousText.textContent = result;
+        previousText.textContent = (Math.round(result * 100) / 100).toFixed(2).replace(/[.,]00$/, "");;
     }
 }
 
@@ -93,10 +99,12 @@ function handleErrorMessage() {
     }
 }
 
-function checkSymbols(btn) {
-    if (['-', '+', '*', '÷'].includes(previousText.textContent.slice(-1))) {
-        const lastChar = previousText.textContent.slice(0, -1);
-        previousText.textContent = lastChar + btn.textContent;
+function replaceSymbols(btn) {
+    const lastChar = previousText.textContent.slice(-1);
+    if (['-', '+', '*', '÷'].includes(lastChar)) {
+        previousText.textContent = previousText.textContent.slice(0, -1) + btn.textContent;
+    } if (!['-', '+', '*', '÷'].includes(lastChar)) {
+        previousText.textContent = previousText.textContent + btn.textContent
     }
 }
 
