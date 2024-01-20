@@ -7,6 +7,16 @@ const previousText = document.querySelector('[data-previous]')
 const currentText = document.querySelector('[data-current]')
 let message = false
 
+////////////////////Make the keyboard work!**********************************************
+
+document.addEventListener('keydown', e => console.log(e.key))
+
+function handleKeyboardInputs(event) {
+
+}
+
+////////////////////Make the keyboard work!**********************************************
+
 numbersBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
         if (currentText.textContent.length > 15) return
@@ -46,9 +56,9 @@ function deleteOne() {
 }
 
 function operations(btn) {
+    handleErrorMessage()
     calculate()
     replaceSymbols(btn)
-    handleErrorMessage()
     if (!currentText.textContent) return;
     currentText.textContent += btn.textContent;
     previousText.textContent = currentText.textContent;
