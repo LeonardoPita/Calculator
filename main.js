@@ -83,35 +83,35 @@ function handleNumberButtonClick(key) {
 }
 
 function calculate() {
-    let operandA = previousText.textContent.slice(0, -1);
+    let operand1 = previousText.textContent.slice(0, -1);
     let operation = previousText.textContent.slice(-1);
-    let operandB = currentOperand.textContent;
-    if (operandB === '.') {
+    let operand2 = currentOperand.textContent;
+    if (operand2 === '.' || operand1 === 'Error' || operand2 === 'NaN') {
         currentOperand.textContent = 'Error';
         message = true;
         return;
     }
-    if (operandA && operation && operandB) {
-        operandA = parseFloat(operandA);
-        operandB = parseFloat(operandB);
+    if (operand1 && operation && operand2) {
+        operand1 = parseFloat(operand1);
+        operand2 = parseFloat(operand2);
         let result;
         switch (operation) {
             case '+':
-                result = operandA + operandB;
+                result = operand1 + operand2;
                 break;
             case '-':
-                result = operandA - operandB;
+                result = operand1 - operand2;
                 break;
             case '*':
-                result = operandA * operandB;
+                result = operand1 * operand2;
                 break;
             case '÷':
-                if (operandB === 0) {
+                if (operand2 === 0) {
                     currentOperand.textContent = 'Error';
                     message = true
                     return;
                 }
-                result = operandA / operandB;
+                result = operand1 / operand2;
                 break;
             default:
                 currentOperand.textContent = 'Error';
