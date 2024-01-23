@@ -12,6 +12,7 @@ document.addEventListener('keydown', (event) => {
 })
 
 function handleKeyboardInputs(event) {
+	handleErrorMessage()
 	let key = event.key
 	if (key === '/') key = '÷'
 	if (/[0-9.]/.test(key)) {
@@ -71,6 +72,7 @@ function operations(btn) {
 }
 
 function handleNumberButtonClick(key) {
+	handleErrorMessage()
 	if (currentOperand.textContent.length > 15) return
 	if (
 		!['-', '+', '*', '÷'].includes(previousText.textContent.slice(-1)) &&
@@ -131,6 +133,7 @@ function calculate() {
 
 function handleErrorMessage() {
 	if (message) {
+		if (previousText.textContent.slice(0, -1) === 'Error') previousText.textContent = ''
 		currentOperand.textContent = ''
 		message = false
 	}
